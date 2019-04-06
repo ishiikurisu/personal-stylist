@@ -8,6 +8,7 @@ b/
 #################
 .vagrant/
 *.logs
+*.log
 
 ##############
 # RUBY STUFF #
