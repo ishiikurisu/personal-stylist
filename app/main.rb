@@ -1,5 +1,7 @@
 require 'sinatra'
 
+$api = ARGV[0]
+
 get '/' do
-    'Hello world!'
+    "Your API is #{$api}"
 end
