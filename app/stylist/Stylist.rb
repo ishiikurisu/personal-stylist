@@ -7,8 +7,12 @@ class Stylist
     stuff['response']['posts']
   end
 
+  def load file
+    fp = File.open file, 'r'
+    fp.read
+  end
+
   def draw posts
-    # TODO create HTML for posts based on the assets of the assets folder
-    posts.to_s
+    load "#{@assets}/base.html"
   end
 end
