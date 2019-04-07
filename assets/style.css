@@ -1,0 +1,59 @@
+body {
+    font-family: 'MetropolisRegular';
+    font-weight: thin;
+    font-style: normal;
+    background-color: #EAEAFF;
+    color: #000411;
+}
+
+.title, .level, .hero {
+    font-family: 'LibreBodoniRegular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.main-title {
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: #0D324D;
+}
+
+.post-title  {
+    text-decoration: underline;
+    text-decoration-color: #0D324D;
+    text-decoration-style: dashed;
+}
+
+.is-primary {
+    color: #000411;
+    background-color: #7DCFB6 !important;
+    background-blend-mode: color-burn;
+    background-attachment: fixed;
+}
+
+.stuff {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+a, a:hover, a:visited {
+    color: #000411;
+    text-decoration-color: #63372C;
+    text-decoration-style: dashed;
+    text-decoration-line: underline;
+}
+
+.footer {
+    color: #EAEAFF;
+    background-color: #0D324D;
+    background-blend-mode: color-burn;
+    background-attachment: fixed;
+}
+
+hr {
+    border-color: #0D324D;
+    border-style: dashed;
+    border-width: 1px;
+    margin-left: -12%;
+    margin-right: -12%;
+}

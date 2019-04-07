@@ -38,6 +38,6 @@ class Stylist
   end
 
   def draw posts
-    load("#{@assets}/base.html").sub('{{Posts}}', posts.map { |post| make post }.join('<hr>'))
+    load("#{@assets}/base.html").sub('{{Posts}}', posts.map { |post| make post }.join('<hr>')).sub('{{Style}}', load("#{@assets}/style.css")).sub('{{Script}}', load("#{@assets}/script.js"))
   end
 end

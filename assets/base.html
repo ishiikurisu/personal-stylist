@@ -4,20 +4,22 @@
     <meta charset="utf-8">
     <title>Personal Stylist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/libre-bodoni" type="text/css"/>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/metropolis" type="text/css"/>
     <style media="screen">
         {{Style}}
     </style>
 </head>
 <body>
     <!-- HEADER -->
-    <section class="hero">
+    <section class="hero is-primary medium">
         <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
+            <div class="container has-text-centered">
+                <h1 class="title main-title">
                     Personal Stylist
                 </h1>
-                <h2>
-                    Taking care of yourself
+                <h2 class="subtitle">
+                    Taking care of you
                 </h2>
             </div>
         </div>
@@ -25,6 +27,7 @@
 
     <!-- NAVIGATION -->
     <div class="container">
+        <br>
         <nav class="level">
             <div class="level-item has-text-centered">
                 <p class="subtitle">
@@ -41,7 +44,7 @@
     <br>
 
     <!-- CONTENT -->
-    <section class="section">
+    <section class="section stuff">
         {{Posts}}
     </section>
 
@@ -49,7 +52,7 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                <strong>Personal Stylist theme</strong> by
+                Personal Stylist theme by
                 <a href="https://jgthms.com">Cris Silva Jr.</a>
                 <a href="http://opensource.org/licenses/mit-license.php">
                     This is open source software!
