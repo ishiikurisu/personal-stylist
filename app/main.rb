@@ -5,7 +5,7 @@ require './app/stylist/Stylist.rb'
 $api = ARGV[0]
 
 get '/' do
-  data = Tumblr.get_posts 'liberdadeorganizacao', $api
+  data = Tumblr.get_posts 'cheio-do-vazio', $api
   stylist = Stylist.new './assets/'
   posts = stylist.read data
   stylist.draw posts

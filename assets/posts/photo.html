@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="columns">
+        <div class="column is-8">
+            {block:Photos}
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+                </div>
+            </div>
+            {/block:Photos}
+        </div>
+        <div class="column is-4">
+            {block:Caption}
+            <p>
+                {Caption}
+            </p>
+            {/block:Caption}
+        </div>
+    </div>
+</div>
