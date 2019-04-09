@@ -1,9 +1,11 @@
-require 'pry'
-
 class Stylist
   def initialize assets
     @assets = assets
     @templates = {
+      'base' => load("#{@assets}/base.html"),
+      'style' => load("#{@assets}/style.css"),
+      'script' => load("#{@assets}/script.js"),
+      'pagination' => load("#{@assets}/posts/pagination.html"),
       'text' => load("#{@assets}/posts/text.html"),
       'photo' => load("#{@assets}/posts/photo.html")
     }
@@ -23,7 +25,6 @@ class Stylist
     when 'text'
       content = @templates['text'].sub('{Title}', post['title']).sub('{Body}', post['body'])
     when 'photo'
-      # binding.pry
       template = @templates['photo']
       photos_block_regex = /\{block:Photos\}(.*)\{\/block:Photos\}/m
       photos_block_html = template[photos_block_regex].sub('{block:Photos}', '').sub('{/block:Photos}', '')
@@ -38,6 +39,28 @@ class Stylist
   end
 
   def draw posts
-    load("#{@assets}/base.html").sub('{{Posts}}', posts.map { |post| make post }.join('<hr>')).sub('{{Style}}', load("#{@assets}/style.css")).sub('{{Script}}', load("#{@assets}/script.js"))
+    @templates['base'].sub('{{Posts}}', posts.map { |post| make post }.join('<hr>')).sub('{{Style}}', @templates['style']).sub('{{Script}}', @templates['script'])
+  end
+
+  def compile
+    outlet = @templates['base']
+
+    outlet.sub! '{{Style}}', @templates['style']
+    outlet.sub! '{{Script}}', @templates['script']
+
+    posts_block = <<-POSTS
+    {block:Posts}
+        {block:Text}
+            #{@templates['text']}
+        {/block:Text}
+        {block:Photoset}
+            #{@templates['photo']}
+        {/block:Photoset}
+    {block:Posts}
+    #{@templates['pagination']}
+    POSTS
+    outlet.sub! '{{Posts}}', posts_block
+
+    return outlet
   end
 end
